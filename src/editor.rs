@@ -1,6 +1,6 @@
 use crossterm::event::{read, Event::Key, KeyCode::Char};
-use crossterm::terminal::enable_raw_mode;
-use crossterm::terminal::disable_raw_mode;
+use crossterm::terminal::{disable_raw_mode, enable_raw_mode};
+
 
 pub struct Editor {
 
