@@ -25,7 +25,7 @@ impl Editor {
             }) = read()? {
                 println!("Code: {code:?} Modifiers: {modifiers:?} Kind: {kind:?} State: {state:?} \r");
                 match code {
-                    Char('q') if modifiers == KeyModifiers::CONTROL => {
+                    Char('Q') if modifiers == KeyModifiers::SHIFT => {
                         self.should_quit = true;
                     }
                     _ => (),
