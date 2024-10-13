@@ -46,6 +46,7 @@ impl Editor {
     }
 
     fn refresh_screen(&self) -> Result<(), Error> {
+        Terminal::hide_cursor()?;
         if self.should_quit {
             Terminal::clear_screen()?;
             Terminal::print("Goodbye. \r\n")?;
@@ -58,7 +59,6 @@ impl Editor {
 
     fn draw_rows() -> Result<(), Error> {
         let Size{height, ..} = Terminal::size()?;
-        // let height = Terminal::size()?.1;
         for current_row in 0..height {
             Terminal::clear_line()?;
             Terminal::print("~")?;
